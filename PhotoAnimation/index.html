@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .wrapper{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0px;
+        }
+        .card{
+            width: 4%;
+            height: 80vh;
+            color: white;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card:nth-child(1){
+            background-image: url(images/1.webp);
+        }
+        .card:nth-child(2){
+            background-image: url(images/2.jpg);
+        }
+        .card:nth-child(3){
+            background-image: url(images/3.webp);
+        }
+        .card:nth-child(4){
+            background-image: url(images/4.jpg);
+        }
+        .card:nth-child(5){
+            background-image: url(images/5.jpg);
+        }
+        .card h2{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            text-shadow: 0px 0px 5px black;
+            opacity: 0;
+        }
+        .card p{
+            font-size: 18px;
+            text-shadow: 0px 0px 5px black;
+            line-height: 30px;
+            padding: 0px 20px;
+            opacity: 0;
+        }
+        .active h2{
+            opacity: 1;
+            transition: 0.7s ease-in;
+        }
+        .active p{
+            opacity: 1;
+            transition: 1s ease-in;
+        }
+        .active{
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cum laboriosam doloribus ipsam, quisquam, vero distinctio, officia minima alias fugit adipisci ea sint deserunt eos aspernatur. Totam eum voluptatem est.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eum tenetur, adipisci cupiditate quidem accusantium totam minima ullam iure iste, tempore saepe corporis error consequatur possimus explicabo hic minus molestiae.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt nobis incidunt reiciendis magni quisquam, facere dignissimos suscipit rerum itaque perferendis neque? Consequatur et eligendi blanditiis doloremque, libero pariatur cum?
+        </p>
+            <h2>Explore The World</h2>
+        </div>
+        <div class="card active"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cum laboriosam doloribus ipsam, quisquam, vero distinctio, officia minima alias fugit adipisci ea sint deserunt eos aspernatur. Totam eum voluptatem est.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eum tenetur, adipisci cupiditate quidem accusantium totam minima ullam iure iste, tempore saepe corporis error consequatur possimus explicabo hic minus molestiae.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt nobis incidunt reiciendis magni quisquam, facere dignissimos suscipit rerum itaque perferendis neque? Consequatur et eligendi blanditiis doloremque, libero pariatur cum?
+        </p>
+            <h2>Explore The World</h2>
+        </div>
+        <div class="card"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cum laboriosam doloribus ipsam, quisquam, vero distinctio, officia minima alias fugit adipisci ea sint deserunt eos aspernatur. Totam eum voluptatem est.</p>
+            <h2>Explore The World</h2>
+        </div>
+        <div class="card"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cum laboriosam doloribus ipsam, quisquam, vero distinctio, officia minima alias fugit adipisci ea sint deserunt eos aspernatur. Totam eum voluptatem est.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eum tenetur, adipisci cupiditate quidem accusantium totam minima ullam iure iste, tempore saepe corporis error consequatur possimus explicabo hic minus molestiae.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt nobis incidunt reiciendis magni quisquam, facere dignissimos suscipit rerum itaque perferendis neque? Consequatur et eligendi blanditiis doloremque, libero pariatur cum?
+        </p>
+            <h2>Explore The World</h2>
+        </div>
+        <div class="card"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cum laboriosam doloribus ipsam, quisquam, vero distinctio, officia minima alias fugit adipisci ea sint deserunt eos aspernatur. Totam eum voluptatem est.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eum tenetur, adipisci cupiditate quidem accusantium totam minima ullam iure iste, tempore saepe corporis error consequatur possimus explicabo hic minus molestiae.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sunt nobis incidunt reiciendis magni quisquam, facere dignissimos suscipit rerum itaque perferendis neque? Consequatur et eligendi blanditiis doloremque, libero pariatur cum?
+        </p>
+            <h2>Explore The World</h2>
+        </div>
+    </div>
+</body>
+<script>
+    let allCarts=document.querySelectorAll(".card");
+    allCarts.forEach((item,index)=>{
+        item.addEventListener("click",()=>{
+            allCarts.forEach((subItem,i)=>{
+                if(index!=i){
+                        subItem.classList.remove("active")
+                }
+            })
+            item.classList.add("active");
+        })
+    })
+</script>
+</html>
